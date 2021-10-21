@@ -6,7 +6,6 @@ void setup() {
   colony = new Nematode[60];
   for (int i = 0; i < colony.length; i++)
     colony[i] = new Nematode((int)(Math.random()*100+200), (int)(Math.random()*100+200));
-  
 }
 
 void draw() {
@@ -16,7 +15,9 @@ void draw() {
   fill(252, 237, 28);
   ellipse(250, 300, 200, 300);
   fill(95, 168, 84);
-  //triangle
+  triangle(250, 80, 230, 180, 270, 180);
+  triangle(220, 70, 230, 180, 200, 170);
+  triangle(320, 70, 270, 180, 300, 170);
   for (int i = 0; i < colony.length; i++) {
     colony[i].move();
     colony[i].show();
@@ -39,19 +40,19 @@ class Nematode
     xMove = 0;
   }
   void move() {
-    if(myX < mouseX)
+    if (myX < mouseX)
       xMove = 1;
-    else if(myX == mouseX)
+    else if (myX == mouseX)
       xMove = 0;
-    else if(myX > mouseX)
+    else if (myX > mouseX)
       xMove = -1;
     myX += (int)(Math.random()*4-2+xMove);
-    
-    if(myY < mouseY)
+
+    if (myY < mouseY)
       yMove = 1;
-    else if(myY == mouseY)
+    else if (myY == mouseY)
       yMove = 0;
-    else if(myY > mouseY)
+    else if (myY > mouseY)
       yMove = -1;
     myY += (int)(Math.random()*4-2+yMove);
   }
